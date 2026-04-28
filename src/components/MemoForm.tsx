@@ -37,6 +37,7 @@ export default function MemoForm({
 
   // 편집 모드일 때 폼 데이터 설정
   useEffect(() => {
+    /* eslint-disable react-hooks/set-state-in-effect */
     if (editingMemo) {
       setFormData({
         title: editingMemo.title,
@@ -53,6 +54,7 @@ export default function MemoForm({
       })
     }
     setTagInput('')
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, [editingMemo, isOpen])
 
   const handleSubmit = async (e: React.FormEvent) => {

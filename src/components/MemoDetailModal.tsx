@@ -34,12 +34,14 @@ export default function MemoDetailModal({
   const [tagSaved, setTagSaved] = useState(false)
 
   useEffect(() => {
+    /* eslint-disable react-hooks/set-state-in-effect */
     setSummary(null)
     setSummaryError(null)
     setIsSummarizing(false)
     setIsTagging(false)
     setTaggingError(null)
     setTagSaved(false)
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, [memo?.id])
 
   useEffect(() => {

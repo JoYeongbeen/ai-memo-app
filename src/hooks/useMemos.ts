@@ -17,8 +17,6 @@ export const useMemos = () => {
   const [selectedCategory, setSelectedCategory] = useState('all')
 
   useEffect(() => {
-    setLoading(true)
-    setError(null)
     getMemosAction()
       .then(loadedMemos => setMemos(loadedMemos))
       .catch(err => {
